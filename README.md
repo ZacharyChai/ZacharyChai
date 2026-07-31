@@ -1,16 +1,19 @@
-## Hi there 👋
+## Hi, I'm Zachary Chai
 
-<!--
-**ZacharyChai/ZacharyChai** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Data and financial analysis work — from loan-level risk models to production data pipelines.
 
-Here are some ideas to get you started:
+### Featured projects
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+**[cre-credit-risk](https://github.com/ZacharyChai/cre-credit-risk)** — Loan-level distress analysis of a live $1.6B CMBS pool ahead of the 2026–2027 maturity wall, built on SEC EDGAR ABS-EE filings.
+
+**[supply-chain-diversion-risk](https://github.com/ZacharyChai/supply-chain-diversion-risk)** — Semiconductor trade diversion risk screen for the Singapore/Hong Kong entrepot corridors, scored against UN Comtrade data and the BIS export control timeline.
+
+**[bridge-pipeline](https://github.com/ZacharyChai/bridge-pipeline)** — Production-inspired ETL pipeline: FRED API to PostgreSQL, containerized with Docker, tested with pytest, deployed with GitHub Actions CI and data-quality gates.
+
+### Also here
+
+**[churn-prediction](https://github.com/ZacharyChai/churn-prediction)** — Logistic regression / random forest churn model on the IBM Telco dataset.
+
+**[singapore-michelin-longevity](https://github.com/ZacharyChai/singapore-michelin-longevity)** — Longitudinal dashboard tracking Michelin star retention in Singapore across nine editions.
+
+**[GSU-Housing-Process](https://github.com/ZacharyChai/GSU-Housing-Process)** — Capstone project redesigning Georgia State University's housing check-in workflow with Lean process improvement.
