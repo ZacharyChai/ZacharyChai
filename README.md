@@ -8,7 +8,7 @@ Data and financial analysis work — from loan-level risk models to production d
 
 **[supply-chain-diversion-risk](https://github.com/ZacharyChai/supply-chain-diversion-risk)** — Semiconductor trade diversion risk screen for the Singapore/Hong Kong entrepot corridors, scored against UN Comtrade data and the BIS export control timeline.
 
-**[bridge-pipeline](https://github.com/ZacharyChai/bridge-pipeline)** — Production-inspired ETL pipeline: FRED API to PostgreSQL, containerized with Docker, tested with pytest, deployed with GitHub Actions CI and data-quality gates.
+**[bridge-pipeline](https://github.com/ZacharyChai/bridge-pipeline)** — Production-inspired ETL pipeline: ingests FRED API macroeconomic data into PostgreSQL using Python and SQL, applies transformations, validates data quality with automated tests, and deploys through GitHub Actions CI.
 
 ### Also here
 
