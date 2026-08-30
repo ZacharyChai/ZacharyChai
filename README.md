@@ -1,19 +1,39 @@
-## Hi, I'm Zachary Chai
+## Zachary Chai
 
-Data analytics, financial risk, and automation projects — from credit risk analysis to production data pipelines.
+Quantitative economics background, working across financial risk, causal inference, and applied NLP. I build analysis end to end: pulling and cleaning the source data, designing the pipeline that keeps it accurate, running the model, and writing the memo that says what it means and what would break it.
 
-### Featured projects
+Most of what follows reports a null. That is deliberate. A result that survives a placebo test, a parameter grid, and a multiple-testing correction is worth more than a significant one that was never asked a hard question.
 
-**[cre-credit-risk](https://github.com/ZacharyChai/cre-credit-risk)** — Loan-level credit risk analysis of a live $1.6B CMBS pool ahead of the 2026–2027 maturity wall, built on SEC EDGAR ABS-EE filings.
+### Featured work
 
-**[supply-chain-diversion-risk](https://github.com/ZacharyChai/supply-chain-diversion-risk)** — Semiconductor trade diversion risk screen for the Singapore/Hong Kong entrepot corridors, scored against UN Comtrade data and the BIS export control timeline.
+| Project | The question | What I found |
+|---|---|---|
+| **[cre-credit-risk](https://github.com/ZacharyChai/cre-credit-risk)** | How much of a $1.6B 2017-vintage CMBS pool cannot refinance into the 2026 maturity wall? | **44.6%** of the pool sits at Elevated or Acute risk on pro-forma DSCR at estimated takeout rates. A [live app](https://cre-credit-risk.streamlit.app/) runs the same logic against any uploaded loan tape. |
+| **[momentum-backtest](https://github.com/ZacharyChai/momentum-backtest)** | Does 12-1 cross-sectional momentum still work in US large caps? | No. Long-short lost **3.6% a year** net of 10 bps (Sharpe -0.17, 70% max drawdown) on 636% turnover, with Fama-French + UMD alpha of **-5.1%/yr, t = -2.6**. Losers outperformed winners. |
+| **[finbert-10k-sentiment](https://github.com/ZacharyChai/finbert-10k-sentiment)** | Does 10-K risk-factor tone predict forward returns, and does a transformer beat a word list? | No to both. **0 of 25** predictive regressions significant across 376 filing-years, and FinBERT adds nothing over the Loughran-McDonald dictionary. |
+| **[minwage-did](https://github.com/ZacharyChai/minwage-did)** | Did the January 2024 state minimum-wage increases cost retail and food-service jobs? | A precise zero. Best estimate **-0.6%** (roughly 39k jobs), 95% CI -86k to +8k, and the placebo test produces effects that size at random dates. |
+| **[ab-test-analysis](https://github.com/ZacharyChai/ab-test-analysis)** | Did the new landing page convert better? | A well-powered null: **-0.16pp** (p = 0.19) across 290K sessions, powered to detect 0.34pp. The sample-ratio-mismatch check ran before any outcome data was read. |
+| **[bridge-pipeline](https://github.com/ZacharyChai/bridge-pipeline)** | Can a macro data pipeline run unattended and prove it is still correct? | FRED to PostgreSQL on a Linux VPS: Docker, Terraform, cron scheduling, backup and restore, data-quality gates, pytest, GitHub Actions CI. Verified live. |
 
-**[bridge-pipeline](https://github.com/ZacharyChai/bridge-pipeline)** — Production-inspired ETL pipeline: ingests FRED API macroeconomic data into PostgreSQL using Python and SQL, applies transformations, validates data quality with automated tests, and deploys through GitHub Actions CI.
+### How I work
+
+- The hypothesis, the primary metric, and the effect size worth caring about are fixed **before** the outcome data is looked at.
+- Every study ships its own falsification test: a placebo, a permutation null, a parameter grid, or all three.
+- Multiple comparisons get corrected. Twelve tests at alpha 0.05 produce a hit about half the time under a pure null, so a lone asterisk is reported next to its q-value.
+- Sample construction is published. Every dropped observation is counted and the reason named, so the funnel from raw data to estimated rows is auditable.
+- A null is written up as a null.
 
 ### Also here
 
-**[churn-prediction](https://github.com/ZacharyChai/churn-prediction)** — Logistic regression / random forest churn model on the IBM Telco dataset.
+- **[churn-prediction](https://github.com/ZacharyChai/churn-prediction)**: binary classification on the IBM Telco dataset, logistic regression against random forest, AUC 0.847 at 77% churn recall.
+- **[supply-chain-diversion-risk](https://github.com/ZacharyChai/supply-chain-diversion-risk)**: semiconductor trade diversion screen for the Singapore and Hong Kong entrepot corridors, scored against UN Comtrade flows and the BIS export-control timeline.
+- **[singapore-michelin-longevity](https://github.com/ZacharyChai/singapore-michelin-longevity)**: which Singapore restaurants hold Michelin stars across nine editions, and what separates them from those that lose them.
+- **[GSU-Housing-Process](https://github.com/ZacharyChai/GSU-Housing-Process)**: housing check-in workflow redesigned in Bizagi, replacing four sequential in-person checkpoints with a single pre-arrival step.
 
-**[singapore-michelin-longevity](https://github.com/ZacharyChai/singapore-michelin-longevity)** — Longitudinal analysis of Michelin star retention in Singapore across nine editions, examining restaurant survival, promotions, demotions, and cuisine trends.
+### Tools
 
-**[GSU-Housing-Process](https://github.com/ZacharyChai/GSU-Housing-Process)** — Capstone project redesigning Georgia State University's housing check-in workflow with Lean process improvement.
+Python (pandas, scikit-learn, statsmodels, Hugging Face transformers), SQL, R, Stata, PostgreSQL, Docker, Terraform, GitHub Actions, Streamlit, Tableau, Power BI
+
+### Contact
+
+[LinkedIn](https://linkedin.com/in/zach-chai) · [Tableau Public](https://public.tableau.com/app/profile/zachary.chai6091) · zachchainy@gmail.com
