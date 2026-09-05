@@ -13,7 +13,7 @@ Most of what follows reports a null. That is deliberate. A result that survives 
 | **[finbert-10k-sentiment](https://github.com/ZacharyChai/finbert-10k-sentiment)** | Does 10-K risk-factor tone predict forward returns, and does a transformer beat a word list? | No to both. **0 of 25** predictive regressions significant across 376 filing-years, and FinBERT adds nothing over the Loughran-McDonald dictionary. |
 | **[minwage-did](https://github.com/ZacharyChai/minwage-did)** | Did the January 2024 state minimum-wage increases cost retail and food-service jobs? | A precise zero. Best estimate **-0.6%** (roughly 39k jobs), 95% CI -86k to +8k, and the placebo test produces effects that size at random dates. |
 | **[ab-test-analysis](https://github.com/ZacharyChai/ab-test-analysis)** | Did the new landing page convert better? | A well-powered null: **-0.16pp** (p = 0.19) across 290K sessions, powered to detect 0.34pp. The sample-ratio-mismatch check ran before any outcome data was read. |
-| **[bridge-pipeline](https://github.com/ZacharyChai/bridge-pipeline)** | Can a macro data pipeline run unattended and prove it is still correct? | FRED to PostgreSQL on a Linux VPS: Docker, Terraform, cron scheduling, backup and restore, data-quality gates, pytest, GitHub Actions CI. Verified live. |
+| **[bridge-pipeline](https://github.com/ZacharyChai/bridge-pipeline)** | Can a macro data pipeline run unattended and prove it is still correct? | 17 FRED/ALFRED series ingested with **full revision history** and modeled in dbt as a star schema, so any mart can be queried as of an arbitrary past date. Snowflake in production, DuckDB for a no-account local build; Airflow orchestration, a read-only FastAPI layer, data-quality gates, pytest, GitHub Actions CI. |
 
 ### How I work
 
@@ -25,14 +25,14 @@ Most of what follows reports a null. That is deliberate. A result that survives 
 
 ### Also here
 
-- **[churn-prediction](https://github.com/ZacharyChai/churn-prediction)**: binary classification on the IBM Telco dataset, logistic regression against random forest, AUC 0.847 at 77% churn recall.
+- **[churn-prediction](https://github.com/ZacharyChai/churn-prediction)**: IBM Telco churn model — logistic regression against random forest, AUC 0.847 at 77% churn recall — shipped as a [live prediction endpoint](https://churn-prediction-8qvu.onrender.com/): one serialized sklearn pipeline behind FastAPI, Pydantic schema validation, health check, pytest suite, Docker, deployed on Render.
 - **[supply-chain-diversion-risk](https://github.com/ZacharyChai/supply-chain-diversion-risk)**: semiconductor trade diversion screen for the Singapore and Hong Kong entrepot corridors, scored against UN Comtrade flows and the BIS export-control timeline.
 - **[singapore-michelin-longevity](https://github.com/ZacharyChai/singapore-michelin-longevity)**: which Singapore restaurants hold Michelin stars across nine editions, and what separates them from those that lose them.
 - **[GSU-Housing-Process](https://github.com/ZacharyChai/GSU-Housing-Process)**: housing check-in workflow redesigned in Bizagi, replacing four sequential in-person checkpoints with a single pre-arrival step.
 
 ### Tools
 
-Python (pandas, scikit-learn, statsmodels, Hugging Face transformers), SQL, R, Stata, PostgreSQL, Docker, Terraform, GitHub Actions, Streamlit, Tableau, Power BI
+Python (pandas, scikit-learn, statsmodels, Hugging Face transformers), SQL, R, Stata, dbt, Snowflake, DuckDB, PostgreSQL, Airflow, FastAPI, Docker, Terraform, GitHub Actions, Streamlit, Tableau, Power BI
 
 ### Contact
 
