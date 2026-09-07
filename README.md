@@ -37,5 +37,3 @@ Python (pandas, scikit-learn, statsmodels, Hugging Face transformers), SQL, R, S
 ### Contact
 
 [LinkedIn](https://linkedin.com/in/zach-chai) · [Tableau Public](https://public.tableau.com/app/profile/zachary.chai6091) · zachchainy@gmail.com
-
-Open to roles in the US.
