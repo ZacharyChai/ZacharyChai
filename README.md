@@ -38,4 +38,4 @@ Python (pandas, scikit-learn, statsmodels, Hugging Face transformers), SQL, R, S
 
 [LinkedIn](https://linkedin.com/in/zach-chai) · [Tableau Public](https://public.tableau.com/app/profile/zachary.chai6091) · zachchainy@gmail.com
 
-Open to data analyst and analytics engineering roles in the US.
+Open to roles in the US.
