@@ -8,12 +8,12 @@ Most of what follows reports a null. That is deliberate. A result that survives 
 
 | Project | The question | What I found |
 |---|---|---|
-| **[cre-credit-risk](https://github.com/ZacharyChai/cre-credit-risk)** | How much of a $1.6B 2017-vintage CMBS pool cannot refinance into the 2026 maturity wall? | **44.6%** of the pool sits at Elevated or Acute risk on pro-forma DSCR at estimated takeout rates. A [live app](https://cre-credit-risk.streamlit.app/) runs the same logic against any uploaded loan tape. |
+| **[cre-credit-risk](https://github.com/ZacharyChai/cre-credit-risk)** | How much of a $1.6B 2017-vintage CMBS pool cannot refinance into its 2027 maturities? | **44.6%** of the pool sits at Elevated or Acute risk on pro-forma DSCR at estimated takeout rates. A [live app](https://cre-credit-risk.streamlit.app/) runs the same logic against any uploaded loan tape. |
 | **[momentum-backtest](https://github.com/ZacharyChai/momentum-backtest)** | Does 12-1 cross-sectional momentum still work in US large caps? | No. Long-short lost **3.6% a year** net of 10 bps (Sharpe -0.17, 70% max drawdown) on 636% turnover, with Fama-French + UMD alpha of **-5.1%/yr, t = -2.6**. Losers outperformed winners. |
 | **[finbert-10k-sentiment](https://github.com/ZacharyChai/finbert-10k-sentiment)** | Does 10-K risk-factor tone predict forward returns, and does a transformer beat a word list? | No to both. **0 of 25** predictive regressions significant across 376 filing-years, and FinBERT adds nothing over the Loughran-McDonald dictionary. |
 | **[minwage-did](https://github.com/ZacharyChai/minwage-did)** | Did the January 2024 state minimum-wage increases cost retail and food-service jobs? | A precise zero. Best estimate **-0.6%** (roughly 39k jobs), 95% CI -86k to +8k, and the placebo test produces effects that size at random dates. |
 | **[ab-test-analysis](https://github.com/ZacharyChai/ab-test-analysis)** | Did the new landing page convert better? | A well-powered null: **-0.16pp** (p = 0.19) across 290K sessions, powered to detect 0.34pp. The sample-ratio-mismatch check ran before any outcome data was read. |
-| **[bridge-pipeline](https://github.com/ZacharyChai/bridge-pipeline)** | Can a macro data pipeline run unattended and prove it is still correct? | 17 FRED/ALFRED series ingested with **full revision history** and modeled in dbt as a star schema, so any mart can be queried as of an arbitrary past date. Snowflake in production, DuckDB for a no-account local build; Airflow orchestration, a read-only FastAPI layer, data-quality gates, pytest, GitHub Actions CI. |
+| **[bridge-pipeline](https://github.com/ZacharyChai/bridge-pipeline)** | Can you reconstruct what macro conditions actually looked like on a past date, rather than as later revised? | 17 FRED/ALFRED series ingested with **full revision history** and modeled in dbt as a star schema, so any mart can be queried as of an arbitrary past date. Snowflake in production, DuckDB for a no-account local build. Terraform provisions the box, GitHub Actions deploys over SSH, and it runs daily on cron with a database backup before each run and an Uptime Kuma heartbeat after it. Airflow orchestration, a read-only FastAPI layer, 80 dbt tests enforced in CI. |
 
 ### How I work
 
@@ -37,3 +37,5 @@ Python (pandas, scikit-learn, statsmodels, Hugging Face transformers), SQL, R, S
 ### Contact
 
 [LinkedIn](https://linkedin.com/in/zach-chai) · [Tableau Public](https://public.tableau.com/app/profile/zachary.chai6091) · zachchainy@gmail.com
+
+Open to data analyst and analytics engineering roles in the US.
