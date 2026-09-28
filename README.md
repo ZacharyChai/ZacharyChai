@@ -14,6 +14,7 @@ Most of what follows reports a null. That is deliberate. A result that survives 
 | **[minwage-did](https://github.com/ZacharyChai/minwage-did)** | Did the January 2024 state minimum-wage increases cost retail and food-service jobs? | A precise zero. Best estimate **-0.6%** (roughly 39k jobs), 95% CI -86k to +8k, and the placebo test produces effects that size at random dates. |
 | **[ab-test-analysis](https://github.com/ZacharyChai/ab-test-analysis)** | Did the new landing page convert better? | A well-powered null: **-0.16pp** (p = 0.19) across 290K sessions, powered to detect 0.34pp. The sample-ratio-mismatch check ran before any outcome data was read. |
 | **[bridge-pipeline](https://github.com/ZacharyChai/bridge-pipeline)** | Can you reconstruct what macro conditions actually looked like on a past date, rather than as later revised? | 17 FRED/ALFRED series ingested with **full revision history** and modeled in dbt as a star schema, so any mart can be queried as of an arbitrary past date. Built on Snowflake, with DuckDB for a no-account local build; Airflow orchestration, a read-only FastAPI layer, and 80 dbt tests enforced in CI. The original single-series Postgres pipeline still runs daily on a Terraform-provisioned VM: GitHub Actions deploys over SSH, cron takes a database backup before each run, and an Uptime Kuma heartbeat confirms it finished. |
+| **[freight-quote-triage](https://github.com/ZacharyChai/freight-quote-triage)** | Can an LLM agent turn freight quote emails into priced quotes, and know when to hand one to a person? | An n8n agent calls three tools (lane coverage, duty rate, landed cost), with the escalation rules enforced in code rather than in the prompt. On 82 hand-labeled requests the first prompt made **no false escalations**; a second version took decision accuracy from **96.0% to 98.7%** on the 75 cases both runs completed, at about twice the latency. |
 
 ### How I work
 
@@ -32,7 +33,7 @@ Most of what follows reports a null. That is deliberate. A result that survives 
 
 ### Tools
 
-Python (pandas, scikit-learn, statsmodels, Hugging Face transformers), SQL, R, Stata, dbt, Snowflake, DuckDB, PostgreSQL, Airflow, FastAPI, Docker, Terraform, GitHub Actions, Streamlit, Tableau, Power BI
+Python (pandas, scikit-learn, statsmodels, Hugging Face transformers), SQL, R, Stata, dbt, Snowflake, DuckDB, PostgreSQL, Airflow, FastAPI, n8n, Docker, Terraform, GitHub Actions, Streamlit, Tableau, Power BI
 
 ### Contact
 
